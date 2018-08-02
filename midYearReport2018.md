@@ -1,4 +1,13 @@
-
+# 智信后台组年中汇报-2018
+## 参与完成的功能
+1. 领导看板<br>
+    ![效果图](img/leaderbord1.png)  ![效果图](img/leaderbord2.png) <br>
+1. 出格报备<br>
+    ![效果图](img/defaultimg.png)<br>
+1. 插件角标<br>
+    ![效果图](img/tipnum.png)<br>
+1. mobile依赖swagger<br>
+    ![效果图](img/swagger.png)<br>
 ## 遇到的坑
 1. session中获取不到humanID的问题
     ```
