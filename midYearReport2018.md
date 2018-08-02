@@ -33,11 +33,11 @@
         at cn.com.egova.pdsspecial.service.impl.PDSSpecialManagerImpl$$FastClassBySpringCGLIB$$97f64cec.invoke(<generated>)
         at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:204)
         at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvo
-    * 调用代码
+    * 调用代码<br>
     ![](img/pingdingshan3.png)
-    * 类定义
+    * 类定义<br>
     ![](img/pingdingshan2.png)
-    * 反编译对比
+    * 反编译对比<br>
     ![](img/pingdingshan4.png)
     * 总结：虽然`pdsspecial`未提交代码，但是调用方法参数类型发生了变化，`int==>Integer`，虽然调用代码时，写法没有区别，编译器会自动帮我们转换，但是如果调用方法的代码不重新编译打包，就会出现错误： `java.lang.NoSuchMethodError`。
     所以，即使没有修改`pdsspecial`的代码，但仍需要重新编译打包`pdsspecial`。
