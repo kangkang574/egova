@@ -22,6 +22,7 @@
 2. 宁波部分用户查看不到图片的问题[【#9294】](http://faq.egova.com.cn:7777/redmine/issues/9294)
     * proxy存在的问题：如果出现401或者500，将直接返回null,此后直接推送空结果到外网proxyserver。这就导致登录验证失败时不会提示客户端重新登录，且客户端一直拿不到请求结果。
     <br>![图片](img/proxy.png)
+    * 与203:8987交互的网络设备（防火墙之类），存在故障，导致tcp包丢失和错误，需现场和业主进行沟通，联系中间设备提供商排查故障。
 3. 平顶山二次核查不通过异常[【#15664】](http://faq.egova.com.cn:7777/redmine/issues/15664)<br>
     * <br>![效果图](img/pingdingshan.png)
     * 二次核查不通过反馈时，报错  org.springframework.web.util.NestedServletException: Handler processing failed; nested exception is java.lang.NoSuchMethodError: `cn.com.egova.bizbase.rec.mapping.Rec.setSecondCheckDisAgreeFlag(I)V`
