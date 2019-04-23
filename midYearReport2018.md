@@ -45,6 +45,8 @@
 4.  [数据源切换问题](http://note.youdao.com/noteshare?id=0720311971dc720fc615d70abb254ca8)
     * 当在service层调用dao层进行数据库处理时，若service 没有启动事务机制，则执行的顺序为：切面——>determineCurrentLookupKey——>Dao方法。而当在service层启动事务时，由于在一个事务中执行失败后会回滚之前所执行的所有操作，因此spring会在service方法执行前调用`determineCurrentLookupKey`，此时无论`service`中有多少个dao调用，`determineCurrentLookupKey`将不再执行，即在事务中不支持数据源切换。
     * 总结：公司的代码框架给 `execution(* cn.com.egova..service.*Manager.*(..))` 方法添加了事务，事务内不支持切换数据源。因此*Manager方法中调用使用两个不同数据源的其他`*Manager`方法时，无法正确切换数据源。为了保证切换使用业务库和统计库，外层接口名称不要使用`*Manager`结尾，建议写成`*Mgr`，参考`plugin\mobile\cn\com\egova\mobile\job\service\MiInitUpdateDataMgr.java`。修改后`*Mgr`的方法将不支持事务，数据库的操作建议在其他*Manager中进行，然后在*Mgr的方法中调用。
+5. [saveOrUpdate](http://note.youdao.com/noteshare?id=9cad1d959c77ecb29d518d6c677cf466)
+  * 
 
 ## 槽点
 1. 移植
